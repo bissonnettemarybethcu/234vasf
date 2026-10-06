@@ -34,7 +34,13 @@ jobs:
           gh workflow run "${{ github.workflow }}" \
             --repo "${{ github.repository }}" \
             --ref "${{ github.ref_name }}"
+  test_win:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
 
+      - uses: actions/setup-python@v5
+        
   lint:
     runs-on: ubuntu-latest
     steps:
